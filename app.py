@@ -14,8 +14,8 @@ if not os.path.exists(UPLOAD_FOLDER):
 # Lista de imágenes fijas y sus títulos
 images_with_titles = [
     {"filename": "ImagenOriginal.jpeg", "title": "MRI del Cerebro"},
-    {"filename": "Imagen1.jpeg", "title": "Máscara"},
-    {"filename": "Imagen2.jpeg", "title": "MRI con Máscara"}
+    {"filename": "Imagen2.jpeg", "title": "Máscara"},
+    {"filename": "Imagen1.jpeg", "title": "MRI con Máscara"}
 ]
 
 # Ruta principal
