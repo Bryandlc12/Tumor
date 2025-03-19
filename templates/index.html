@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir y Analizar Imágenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            max-width: 200px;
+            margin: 10px;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        .image-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Subir y Analizar Imágenes</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*"><br><br>
+        <button type="submit">Subir Imagen</button>
+    </form>
+
+    <!-- Mostrar imágenes procesadas con títulos después de subir una imagen -->
+    {% if images_with_titles %}
+    <div id="imageContainer">
+        <h2>Imágenes Procesadas</h2>
+        <div id="processedImages">
+            {% for image in images_with_titles %}
+                <div class="image-container">
+                    <div class="image-title">{{ image.title }}</div>
+                    <img src="{{ url_for('uploaded_file', filename=image.filename) }}" alt="{{ image.title }}">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+</body>
+</html>
